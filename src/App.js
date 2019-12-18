@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Menu from "./components/Menu";
+import Bubble from "./components/Bubble";
+import Insertion from "./components/Insertion";
+import Counting from "./components/Counting";
+import Heap from "./components/Heap";
+import Merge from "./components/Merge";
+import Quick from "./components/Quick";
+import Selection from "./components/Selection";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Menu />
+        <Route path="/bubble" render={() => <Bubble />} />
+        <Route path="/insertion" render={() => <Insertion />} />
+        <Route path="/counting" render={() => <Counting />} />
+        <Route path="/heap" render={() => <Heap />} />
+        <Route path="/merge" render={() => <Merge />} />
+        <Route path="/quick" render={() => <Quick />} />
+        <Route path="/selection" render={() => <Selection />} />
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
